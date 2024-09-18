@@ -1,0 +1,37 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+.header {
+    text-align: left;
+    padding: 10px;
+    font-size: 18px;
+}
+
+.game-container {
+    margin-top: 50px;
+}
+
+img {
+    width: 200px;
+    cursor: pointer;
+    transition: transform 0.1s;
+}
+
+img:active {
+    transform: scale(1.1);  /* تكبير الصورة عند النقر */
+}
+
+.score, .level {
+    font-size: 24px;
+    margin-top: 20px;
+}
+
+.boost-container {
+    margin-top: 20px;
+}
+
+.tasks-container {
+    margin-top: 30px;
+}

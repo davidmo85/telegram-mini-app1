@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Game</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <audio id="click-sound" src="click-sound.mp3" preload="auto"></audio>
+
+    <div class="header">
+        <span id="welcome-message">Welcome, </span><span id="username"></span>!
+    </div>
+    <h1>Tap the image to increase your score!</h1>
+    <div class="game-container">
+        <img src="https://via.placeholder.com/200" alt="Click Me!" id="game-image">
+        <div class="score">Score: <span id="score">0</span></div>
+        <div class="level">Level: <span id="level">1</span></div> <!-- عرض المستوى -->
+    </div>
+
+    <!-- قسم التعزيزات -->
+    <div class="boost-container">
+        <h3>Select Boost</h3>
+        <button onclick="applyBoost(2)">x2 Boost</button>
+        <button onclick="applyBoost(3)">x3 Boost</button>
+    </div>
+
+    <!-- قسم المهام -->
+    <div class="tasks-container">
+        <h2>Complete Social Tasks to Earn Rewards</h2>
+        <ul>
+            <li>
+                Follow our Telegram channel 
+                <button onclick="completeTask('telegram-follow')">Complete</button>
+            </li>
+            <li>
+                Like our Facebook page 
+                <button onclick="completeTask('facebook-like')">Complete</button>
+            </li>
+            <li>
+                Follow us on Instagram 
+                <button onclick="completeTask('instagram-follow')">Complete</button>
+            </li>
+        </ul>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

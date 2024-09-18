@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaderboard</title>
+</head>
+<body>
+    <h1>Leaderboard</h1>
+    <table id="leaderboard">
+        <thead>
+            <tr>
+                <th>Username</th>
+                <th>Score</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <script>
+        fetch('/leaderboard')
+        .then(response => response.json())
+        .then(data => {
+            const leaderboard = document.getElementById('leaderboard').querySelector('tbody');
+            data.forEach(([username, score]) => {
+                const row = document.createElement('tr');
+                row.innerHTML = `<td>${username}</td><td>${score}</td>`;
+                leaderboard.appendChild(row);
+            });
+        })
+        .catch(error => console.error('Error:', error));
+    </script>
+</body>
+</html>
